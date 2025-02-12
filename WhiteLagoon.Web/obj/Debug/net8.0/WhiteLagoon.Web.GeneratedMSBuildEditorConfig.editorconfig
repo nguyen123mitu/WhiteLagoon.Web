@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WhiteLagoon.Web
 build_property.RootNamespace = WhiteLagoon.Web
@@ -32,6 +40,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/Views/Villa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGEvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/Views/Villa/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGEvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/Views/Villa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGEvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/Views/Villa/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGEvVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/Views/_ViewImports.cshtml]
