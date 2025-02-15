@@ -171,3 +171,6 @@
 /Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/bin/Debug/net8.0/WhiteLagoon.Domain.pdb
 /Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/obj/Debug/net8.0/WhiteLagoon.Web.csproj.AssemblyReference.cache
 /Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/obj/Debug/net8.0/WhiteLag.E5366113.Up2Date
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/obj/Debug/net8.0/WhiteLagoon.Web.MvcApplicationPartsAssemblyInfo.cs
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/bin/Debug/net8.0/WhiteLagoon.Application.dll
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/bin/Debug/net8.0/WhiteLagoon.Application.pdb

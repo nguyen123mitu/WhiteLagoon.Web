@@ -10,3 +10,4 @@
 /Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Domain/obj/Debug/net8.0/refint/WhiteLagoon.Domain.dll
 /Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Domain/obj/Debug/net8.0/WhiteLagoon.Domain.pdb
 /Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Domain/obj/Debug/net8.0/ref/WhiteLagoon.Domain.dll
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Domain/obj/Debug/net8.0/WhiteLagoon.Domain.csproj.AssemblyReference.cache

@@ -1,0 +1,16 @@
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/bin/Debug/net8.0/WhiteLagoon.Application.deps.json
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/bin/Debug/net8.0/WhiteLagoon.Application.dll
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/bin/Debug/net8.0/WhiteLagoon.Application.pdb
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/bin/Debug/net8.0/WhiteLagoon.Domain.dll
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/bin/Debug/net8.0/WhiteLagoon.Domain.pdb
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.csproj.AssemblyReference.cache
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.AssemblyInfoInputs.cache
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.AssemblyInfo.cs
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.csproj.CoreCompileInputs.cache
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.sourcelink.json
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLag.5B63BB29.Up2Date
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.dll
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/refint/WhiteLagoon.Application.dll
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/WhiteLagoon.Application.pdb
+/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Application/obj/Debug/net8.0/ref/WhiteLagoon.Application.dll

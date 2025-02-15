@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UKMJIl7AYipjdvZs62G+xUsuRGZiaboAR7VQ/3i4uWk=",
+  "Hash": "IZ1wKqeCFgmiTPzEPvWUl8gWgaToHlkXYgbvPwO3ZZs=",
   "Source": "WhiteLagoon.Web",
   "BasePath": "_content/WhiteLagoon.Web",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/logo.jpg"
+    },
+    {
+      "Identity": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/logo.webp",
+      "SourceId": "WhiteLagoon.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/",
+      "BasePath": "_content/WhiteLagoon.Web",
+      "RelativePath": "images/logo.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/logo.webp"
     },
     {
       "Identity": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/js/site.js",

@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/images/logo.jpg"
     },
     {
+      "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/logo.webp",
+      "PackagePath": "staticwebassets/images/logo.webp"
+    },
+    {
       "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
