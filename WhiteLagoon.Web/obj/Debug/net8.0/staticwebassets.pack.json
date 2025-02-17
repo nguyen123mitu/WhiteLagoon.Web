@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/VillaImage/e67b0f7b-0b8f-437a-849c-e4ec932e364b.jpg",
+      "PackagePath": "staticwebassets/images/VillaImage/e67b0f7b-0b8f-437a-849c-e4ec932e364b.jpg"
+    },
+    {
       "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/image_error.gif",
       "PackagePath": "staticwebassets/images/image_error.gif"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/logo.webp",
       "PackagePath": "staticwebassets/images/logo.webp"
+    },
+    {
+      "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/villa-bibi-promo-banner.jpg",
+      "PackagePath": "staticwebassets/images/villa-bibi-promo-banner.jpg"
     },
     {
       "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/js/site.js",
