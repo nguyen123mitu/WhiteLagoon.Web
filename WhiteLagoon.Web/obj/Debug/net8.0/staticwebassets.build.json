@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fa3mx2HZ6S1XMHNbQZMMqB40CR5q331GNGNZyb9icQo=",
+  "Hash": "6rijnUBJ+VoN0m/YUduqfFy6I3h1Ij2lLkIq4JAnzGY=",
   "Source": "WhiteLagoon.Web",
   "BasePath": "_content/WhiteLagoon.Web",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/villa-bibi-promo-banner.jpg"
+    },
+    {
+      "Identity": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/VillaImage/c1f06f24-4c32-42d0-8234-55ceafd91004.jpg",
+      "SourceId": "WhiteLagoon.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/",
+      "BasePath": "_content/WhiteLagoon.Web",
+      "RelativePath": "images/VillaImage/c1f06f24-4c32-42d0-8234-55ceafd91004.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/VillaImage/c1f06f24-4c32-42d0-8234-55ceafd91004.jpg"
     },
     {
       "Identity": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/VillaImage/e67b0f7b-0b8f-437a-849c-e4ec932e364b.jpg",

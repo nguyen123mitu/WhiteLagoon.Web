@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/VillaImage/c1f06f24-4c32-42d0-8234-55ceafd91004.jpg",
+      "PackagePath": "staticwebassets/images/VillaImage/c1f06f24-4c32-42d0-8234-55ceafd91004.jpg"
+    },
+    {
       "Id": "/Users/nguyendackhoinguyen/Learning/WhiteLagoon.Web/WhiteLagoon.Web/wwwroot/images/VillaImage/e67b0f7b-0b8f-437a-849c-e4ec932e364b.jpg",
       "PackagePath": "staticwebassets/images/VillaImage/e67b0f7b-0b8f-437a-849c-e4ec932e364b.jpg"
     },
