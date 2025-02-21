@@ -23,4 +23,5 @@ public class Villa
     public string? ImageUrl { get; set; }
     public DateTime? CreatedDate { get; set; }
     public DateTime? UpdatedDate { get; set; }
+    public IEnumerable<Amenity> VillaAmenity { get; set; }
 }
