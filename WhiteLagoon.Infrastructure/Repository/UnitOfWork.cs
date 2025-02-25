@@ -11,13 +11,14 @@ public class UnitOfWork : IUnitOfWork
     public IVillaNumberRepository VillaNumber { get; private set;}
 
     public IAmentityRepository Amenity { get; private set;}
-
+    public IBookingRepository Booking { get; private set;}
     public UnitOfWork(ApplicationDbContext db)
     {
         _db = db;
         Amenity = new AmentityRepository(_db);
         Villa = new VillaRepository(_db);
         VillaNumber = new VillaNumberRepository(_db);
+        Booking = new BookingRepository(_db);
     }
 
     public void Save()
