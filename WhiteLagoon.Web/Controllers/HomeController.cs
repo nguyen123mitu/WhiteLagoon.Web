@@ -24,6 +24,32 @@ public class HomeController : Controller
         };
         return View(homeVM);
     }
+    [HttpPost]
+    public IActionResult Index(HomeVM homeVM)
+    {
+        homeVM.VillaList = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity");
+        
+        return View(homeVM);
+    }
+    public IActionResult GetVillasByDate(int nights, DateOnly checkInDate)
+    {
+        Thread.Sleep(2000);
+        var villaList = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity").ToList();
+        foreach (var villa in villaList)
+        {
+            if (villa.Id %2 == 0)
+            {
+                villa.IsAvailable = false;
+            }
+        }
+        HomeVM homeVM = new()
+        {
+            VillaList = villaList,
+            Nights = nights,
+            CheckInDate = checkInDate,
+        };
+        return PartialView("_VillaList" ,homeVM);
+    }
 
     public IActionResult Privacy()
     {
