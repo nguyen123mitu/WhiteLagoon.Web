@@ -25,7 +25,7 @@ public class Booking
     public string? Phone { get; set; }
 
     [Required]
-    public DateTime TotalCost { get; set; }
+    public double TotalCost { get; set; }
     public int Nights { get; set; }
     public string? Status { get; set; }
 

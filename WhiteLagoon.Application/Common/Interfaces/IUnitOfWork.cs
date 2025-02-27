@@ -6,5 +6,6 @@ public interface IUnitOfWork
         IVillaNumberRepository VillaNumber { get; }
         IAmentityRepository Amenity { get; }
         IBookingRepository Booking { get; }
+        IApplicationUserRepository User { get; }
         void Save();
 }
