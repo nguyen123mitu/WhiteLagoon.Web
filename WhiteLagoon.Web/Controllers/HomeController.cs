@@ -1,150 +1,159 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Syncfusion.Presentation;
 using WhiteLagoon.Application.Common.Interfaces;
 using WhiteLagoon.Application.Common.Utility;
-using WhiteLagoon.Web.Models;
+using WhiteLagoon.Application.Services.Interface;
 using WhiteLagoon.Web.ViewModel;
+using WhiteLagoon.Web.ViewModels;
 
-namespace WhiteLagoon.Web.Controllers;
-
-public class HomeController : Controller
+namespace WhiteLagoon.Web.Controllers
 {
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IWebHostEnvironment _webHostEnvironment;
-    public HomeController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
+    public class HomeController : Controller
     {
-        _unitOfWork = unitOfWork;
-        _webHostEnvironment = webHostEnvironment;
-    }
 
-    public IActionResult Index()
-    {
-        HomeVM homeVM = new()
-        {
-            VillaList = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity"),
-            Nights = 1,
-            CheckInDate= DateOnly.FromDateTime(DateTime.Now),
-        };
-        return View(homeVM);
-    }
-    [HttpPost]
-    public IActionResult GetVillasByDate(int nights, DateOnly checkInDate)
-    {
-        Thread.Sleep(2000);
-        var villaList = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity").ToList();
-        var VillaNumbersList = _unitOfWork.VillaNumber.GetAll().ToList();
-        var bookedVillas = _unitOfWork.Booking.GetAll(u => u.Status == SD.StatusApproved || u.Status == SD.StatusCheckedIn).ToList();
-        foreach (var villa in villaList)
-        {
-            int roomAvailable = SD.VillaRoomsAvailable_Count(villa.Id, VillaNumbersList, checkInDate, nights, bookedVillas);
-            villa.IsAvailable = roomAvailable > 0 ? true : false;
-        }
-        HomeVM homeVM = new()
-        {
-            VillaList = villaList,
-            Nights = nights,
-            CheckInDate = checkInDate,
-        };
-        return PartialView("_VillaList" ,homeVM);
-    }
+        private readonly IVillaService _villaService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-    [HttpPost]
-    public IActionResult GeneratePPTExport(int id)
-    {
-        var villa = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity").FirstOrDefault(u => u.Id == id);
-        if (villa == null)
+        public HomeController(IVillaService villaService, IWebHostEnvironment webHostEnvironment)
         {
-            return RedirectToAction(nameof(Error));
-        }
-        string basePath = _webHostEnvironment.WebRootPath;
-        string filePath = basePath + @"/Exports/ExportVillaDetails.pptx";
-
-        using IPresentation presentation = Presentation.Open(filePath);
-        ISlide slide = presentation.Slides[0];
-
-        IShape? shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtVillaName") as IShape;
-        if (shape != null)
-        {
-            shape.TextBody.Text = villa.Name;
+            _villaService = villaService;
+            _webHostEnvironment = webHostEnvironment;
         }
 
-        shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtVillaDescription") as IShape;
-        if (shape != null)
+        public IActionResult Index()
         {
-            shape.TextBody.Text = villa.Description;
-        }
-
-        shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtOccupancy") as IShape;
-        if (shape != null)
-        {
-            shape.TextBody.Text = string.Format("Max Occupancy {0} adults", villa.Occupancy);
-        }
-        shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txVillaSize") as IShape;
-        if (shape != null)
-        {
-            shape.TextBody.Text = string.Format("Villa Size {0} : sqft", villa.Sqft);
-        }
-        shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtPricePerNight") as IShape;
-        if (shape != null)
-        {
-            shape.TextBody.Text = string.Format("USD {0}/night", villa.Price.ToString("C"));
-        }
-
-
-        shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtVillaAmentitiesHeading") as IShape;
-        if (shape != null)
-        {
-            List<string> listItems = villa.VillaAmenity.Select(u => u.Name).ToList();
-            shape.TextBody.Text = "";
-            foreach (var item in listItems)
+            HomeVM homeVM = new()
             {
-                IParagraph paragraph = shape.TextBody.AddParagraph();
-                ITextPart textPart = paragraph.AddTextPart(item);
+                VillaList = _villaService.GetAllVillas(),
+                Nights=1,
+                CheckInDate =DateOnly.FromDateTime(DateTime.Now),
+            };
+            return View(homeVM);
+        }
 
-                paragraph.ListFormat.Type = ListType.Bulleted;
-                paragraph.ListFormat.BulletCharacter = '\u2022';
-                textPart.Font.FontName = "system-ui";
-                textPart.Font.FontSize = 18;
-                textPart.Font.Color = ColorObject.FromArgb(144, 148, 152);
+        [HttpPost]
+        public IActionResult GetVillasByDate(int nights, DateOnly checkInDate) 
+        {
+           
+            HomeVM homeVM = new()
+            {
+                CheckInDate = checkInDate,
+                VillaList = _villaService.GetVillasAvailabilityByDate(nights,checkInDate),
+                Nights = nights
+            };
 
+            return PartialView("_VillaList",homeVM);
+        }
+
+        [HttpPost]
+        public IActionResult GeneratePPTExport(int id)
+        {
+            var villa = _villaService.GetVillaById(id);
+            if (villa is null)
+            {
+                return RedirectToAction(nameof(Error));
+            }
+
+            string basePath = _webHostEnvironment.WebRootPath;
+            string filePath = basePath + @"/Exports/ExportVillaDetails.pptx";
+
+
+            using IPresentation presentation = Presentation.Open(filePath);
+
+            ISlide slide = presentation.Slides[0];
+
+
+            IShape? shape = slide.Shapes.FirstOrDefault(u=>u.ShapeName== "txtVillaName") as IShape;
+            if(shape is not null)
+            {
+                shape.TextBody.Text = villa.Name;
+            }
+
+            shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtVillaDescription") as IShape;
+            if (shape is not null)
+            {
+                shape.TextBody.Text = villa.Description;
+            }
+
+
+            shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtOccupancy") as IShape;
+            if (shape is not null)
+            {
+                shape.TextBody.Text = string.Format("Max Occupancy : {0} adults", villa.Occupancy);
+            }
+            shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtVillaSize") as IShape;
+            if (shape is not null)
+            {
+                shape.TextBody.Text = string.Format("Villa Size: {0} sqft", villa.Sqft);
+            }
+            shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtPricePerNight") as IShape;
+            if (shape is not null)
+            {
+                shape.TextBody.Text = string.Format("USD {0}/night", villa.Price.ToString("C"));
+            }
+
+
+            shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "txtVillaAmenitiesHeading") as IShape;
+            if(shape is not null)
+            {
+                List<string> listItems = villa.VillaAmenity.Select(x => x.Name).ToList();
+
+                shape.TextBody.Text = "";
+
+                foreach (var item in listItems)
+                {
+                    IParagraph paragraph = shape.TextBody.AddParagraph();
+                    ITextPart textPart = paragraph.AddTextPart(item);
+
+                    paragraph.ListFormat.Type = ListType.Bulleted;
+                    paragraph.ListFormat.BulletCharacter = '\u2022';
+                    textPart.Font.FontName = "system-ui";
+                    textPart.Font.FontSize = 18;
+                    textPart.Font.Color = ColorObject.FromArgb(144, 148, 152);
+
+                }
 
             }
+
+            shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "imgVilla") as IShape;
+            if(shape is not null)
+            {
+                byte[] imageData;
+                string imageUrl;
+                try
+                {
+                    imageUrl= string.Format("{0}{1}", basePath, villa.ImageUrl);
+                    imageData = System.IO.File.ReadAllBytes(imageUrl);
+                }
+                catch (Exception)
+                {
+                    imageUrl = string.Format("{0}{1}", basePath, "/images/placeholder.png");
+                    imageData = System.IO.File.ReadAllBytes(imageUrl);
+                }
+                slide.Shapes.Remove(shape); 
+                using MemoryStream imageStream = new(imageData);
+                IPicture newPicture = slide.Pictures.AddPicture(imageStream, 60,120,300,200);
+
+            }
+
+
+
+            MemoryStream memoryStream = new();
+            presentation.Save(memoryStream);
+            memoryStream.Position = 0;
+            return File(memoryStream,"application/pptx","villa.pptx");
+
+
         }
 
-        shape = slide.Shapes.FirstOrDefault(u => u.ShapeName == "imgVilla") as IShape;
-        if(shape is not null)
+        public IActionResult Privacy()
         {
-            byte[] imageData;
-            string imageUrl;
-            try
-            {
-                imageUrl= string.Format("{0}{1}", basePath, villa.ImageUrl);
-                imageData = System.IO.File.ReadAllBytes(imageUrl);
-            }
-            catch (Exception)
-            {
-                imageUrl = string.Format("{0}{1}", basePath, "/images/placeholder.png");
-                imageData = System.IO.File.ReadAllBytes(imageUrl);
-            }
-            slide.Shapes.Remove(shape); 
-            using MemoryStream imageStream = new(imageData);
-            IPicture newPicture = slide.Pictures.AddPicture(imageStream, 60,120,300,200);
-
+            return View();
         }
 
-        MemoryStream stream = new();
-        presentation.Save(stream);
-        stream.Position = 0;
-        return File(stream, "application/pptx", "Villa.pptx");
-    }
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
